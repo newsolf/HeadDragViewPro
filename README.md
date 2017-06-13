@@ -2,7 +2,7 @@
 一款BODY可以上下滑动，HEAD显示与隐藏，能节约布局空间的自定义View。
 
 ## Results demonstrate (效果演示)
-![image](https://github.com/XinYiWorld/FormValidator/blob/master/result.gif)
+![image](https://github.com/XinYiWorld/HeadDragViewPro/blob/master/result.gif)
 ## Download (集成指南)
 1. first,edit your application build.gradle<br />
 ```Groovy

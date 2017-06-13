@@ -113,6 +113,11 @@ public class HeadDragView extends LinearLayout{
             return top;
         }
 
+        @Override
+        public int clampViewPositionHorizontal(View child, int left, int dx) {
+            return 0;
+        }
+
         // c. 当视图位置变化时调用, 处理伴随动画, 更新状态, 执行监听
         @Override
         public void onViewPositionChanged(View changedView, int left, int top,

@@ -18,70 +18,56 @@ allprojects {
 ```Groovy
 dependencies {
     ...
-    compile 'com.github.XinYiWorld:FormValidator:1.0.0'
+    compile 'com.github.XinYiWorld:HeadDragViewPro:1.0.0'
 }
 ```
 
 
 ## Use (使用指南)
 ```Java
- //表单校验器绑定
-        new FormValidator(this)
-                .et(tv_nick_name,new EmptyValidator())
-                .et(et_name,new PhoneValidator(new BaseEditTextValidator.OnValidatorResultObserver() {
-                    @Override
-                    public void onValidate(TextView tv, String content, boolean success) {
-
-                    }
-                }))
-                .et(et_password,new PasswordValidator(new BaseEditTextValidator.OnValidatorResultObserver() {
-                    /**
-                     * 被校验的view的状态单独监听
-                     * @param tv
-                     * @param content
-                     * @param success
-                     */
-                    @Override
-                    public void onValidate(TextView tv, String content, boolean success) {
-
-                    }
-                }))
-                .bt(btn_next,this);
-                
-   //回调方法
-    /**
-     * 校验不通过
-     * @param button
-     */
+    HeadDragView hdv = (HeadDragView) findViewById(R.id.hdv);
+    hdv.setOnDragUpdateListener(this);
+    ...
     @Override
-    public void onButtonLocked(View button) {
-
+    public void onOpen() {
+        Toast.makeText(this, "open", Toast.LENGTH_SHORT).show();
     }
 
-    /**
-     * 校验通过
-     * @param button
-     */
     @Override
-    public void onButtonUnLocked(View button) {
-
+    public void onClose() {
+        Toast.makeText(this, "close", Toast.LENGTH_SHORT).show();
     }
 
-    /**
-     * .bt(button)  中的button的onClick事件
-     * @param button    按钮
-     * @param ets       被校验的TextView或者EditText
-     * @param contents  被校验的TextView或者EditText的内容
-     */
     @Override
-    public void onNext(View button, TextView[] ets, String[] contents) {
-        ToastUtil.shortT(this,"校验成功");
-    }
+    public void onDraging(float percent) {
 
+    }
 ```
- 
-## Thanks (特别感谢)
-* [AValidations](https://github.com/xiaob/AValidations)
+
+```Xml
+     <xinyi.com.headdragview.HeadDragView
+        android:id="@+id/hdv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/aa"
+            android:scaleType="centerCrop"
+            />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                ...
+            </LinearLayout>
+        </ScrollView>
+```
 
 ## Contact me (联系我)
 * QQ邮箱:1349308479@qq.com

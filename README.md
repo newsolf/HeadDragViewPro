@@ -67,6 +67,7 @@ dependencies {
                 ...
             </LinearLayout>
         </ScrollView>
+    </xinyi.com.headdragview.HeadDragView>
 ```
 
 ## Contact me (联系我)

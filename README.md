@@ -15,7 +15,7 @@ allprojects {
 ```
 <br />
 2. second,edit your module build.gradle<br />
-```Groovy
+```Java
 dependencies {
     ...
     compile 'com.github.XinYiWorld:HeadDragViewPro:1.0.0'
